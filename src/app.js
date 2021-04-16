@@ -18,7 +18,7 @@ app.post('/code_snippets/', (req, res) => {
             res.json({
                 code: 200,
                 data: {
-                    id: doc._id,
+                    _id: doc.id,
                     title: doc.title,
                     code: doc.code,
                     comments: doc.comments
@@ -48,8 +48,8 @@ app.post('/code_snippets/:id/comments/', (req, res) => {
                 });
             } else {
                 res.json({
-                    "message": "Change was successful",
-                    "docs": docs
+                    code: 200,
+                    docs: docs
                 });
             }
         }
